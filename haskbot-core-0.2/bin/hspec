@@ -1,0 +1,1 @@
+cabal build spec && ./dist/build/spec/spec
