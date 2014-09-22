@@ -63,7 +63,7 @@ executable haskbot-plugins
   -- Other library packages from which modules are imported.
   build-depends:       base >=4.6 && <4.8,
                        containers >= 0.5,
-                       haskbot-core >=0.1 && <0.2,
+                       haskbot-core >=0.2 && <0.3,
                        text >= 1.2
   
   -- Directories containing source files.
@@ -81,7 +81,11 @@ test-suite test-haskbot-plugins
 
   build-depends:       base >=4.6 && <4.8,
                        containers >= 0.5,
-                       haskbot-core >=0.1 && <0.2,
+                       haskbot-core >=0.2 && <0.3,
                        text >= 1.2,
-                       hspec,
-                       QuickCheck
+                       hspec2,
+                       hspec-wai,
+                       http-types,
+                       QuickCheck,
+                       wai,
+                       warp
