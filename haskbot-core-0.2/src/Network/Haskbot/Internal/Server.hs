@@ -26,9 +26,6 @@ webServer config plugins = do
 
 -- private functions
 
--- app :: Application
--- app req resp = runner env plugins req >>= resp
-
 sendResponsesToSlack :: Environment -> IO ()
 sendResponsesToSlack = runReaderT sendFromQueue
 
@@ -39,8 +36,6 @@ processSlackRequests env plugins = run port (app env plugins)
 
 app :: Environment -> [Plugin] -> Application
 app env plugins req resp = runner env plugins req >>= resp
-
-
 
 runner :: Environment -> [Plugin] -> Request -> IO Response
 runner env plugins req = do
